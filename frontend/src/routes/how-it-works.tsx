@@ -1,3 +1,4 @@
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { ArrowRight, RotateCw, Search, ShieldCheck, Sparkles, Users } from "lucide-react";
 
 export const Route = createFileRoute("/how-it-works")({
