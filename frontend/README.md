@@ -1,16 +1,49 @@
-# React + Vite
+# iRide — Intercity Ride-Matching Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A two-sided platform connecting passengers traveling A → B with drivers
+returning B → A. Cuts passenger fares while improving driver utilization
+on otherwise empty return legs.
 
-Currently, two official plugins are available:
+## Stack
+- React 18 + TypeScript
+- Vite 6
+- React Router v6
+- Tailwind CSS v4 (CSS-first config in `src/styles.css`)
+- Lucide icons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Getting started
 
-## React Compiler
+```bash
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open http://localhost:5173
 
-## Expanding the ESLint configuration
+## Build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build
+npm run preview
+```
+
+## Project structure
+
+```
+src/
+  assets/           Images
+  components/       Reusable UI (Header, Footer, RideCard, RouteLine)
+  lib/              Mock data + utils
+  pages/            Route components
+    Index.tsx       Landing + search
+    FindRides.tsx   Discovery + filters
+    PostRide.tsx    Driver trip posting
+    HowItWorks.tsx  Marketing / explainer
+    NotFound.tsx
+  main.tsx          Router + app shell
+  styles.css        Design tokens + Tailwind import
+```
+
+## Notes
+- All ride data is mocked in `src/lib/mockData.ts` — swap for a real API.
+- Design tokens (colors, radii, shadows, gradients) live in `src/styles.css`.
